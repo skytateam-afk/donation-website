@@ -1,0 +1,36 @@
+/* Prevent browser extensions from interfering during navigation */
+body.navigating {
+  pointer-events: none;
+}
+
+body.navigating * {
+  pointer-events: none;
+}
+
+/* Re-enable for actual content after navigation */
+body:not(.navigating) #app {
+  pointer-events: auto;
+}
+
+body:not(.navigating) #app * {
+  pointer-events: auto;
+}
+
+/* Hide extension overlays during navigation */
+body.navigating [data-lastpass-icon-root],
+body.navigating [data-bitwarden-icon],
+body.navigating [data-1p-icon],
+body.navigating [data-dashlane-icon] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+/* Prevent extension iframes from interfering */
+body.navigating iframe[id*="bitwarden"],
+body.navigating iframe[id*="lastpass"],
+body.navigating iframe[id*="1password"],
+body.navigating iframe[id*="dashlane"] {
+  display: none !important;
+  visibility: hidden !important;
+}

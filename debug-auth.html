@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Auth Debug</title>
+</head>
+<body>
+    <h1>Authentication Debug</h1>
+    <div id="output"></div>
+    
+    <script>
+        const output = document.getElementById('output');
+        
+        // Get stored data
+        const token = localStorage.getItem('fabric_explorer_token');
+        const userStr = localStorage.getItem('fabric_explorer_user');
+        
+        let html = '<h2>LocalStorage Data:</h2>';
+        html += '<p><strong>Token:</strong> ' + (token ? token.substring(0, 50) + '...' : 'Not found') + '</p>';
+        html += '<p><strong>User String:</strong> ' + (userStr || 'Not found') + '</p>';
+        
+        if (userStr) {
+            try {
+                const user = JSON.parse(userStr);
+                html += '<h3>Parsed User Object:</h3>';
+                html += '<pre>' + JSON.stringify(user, null, 2) + '</pre>';
+                html += '<p><strong>Role:</strong> ' + user.role + '</p>';
+                html += '<p><strong>Role Type:</strong> ' + typeof user.role + '</p>';
+                html += '<p><strong>Is Admin:</strong> ' + (user.role === 'admin') + '</p>';
+            } catch (e) {
+                html += '<p style="color: red;">Error parsing user: ' + e.message + '</p>';
+            }
+        }
+        
+        output.innerHTML = html;
+    </script>
+</body>
+</html>

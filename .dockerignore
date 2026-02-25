@@ -1,0 +1,54 @@
+# Dependencies
+node_modules
+npm-debug.log
+yarn-error.log
+package-lock.json
+
+# Build output
+dist
+build
+.vite
+
+# Environment files
+.env.local
+.env.*.local
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Git
+.git
+.gitignore
+
+# Documentation
+README.md
+*.md
+STORYBOOK.md
+SEO_*.md
+
+# Test files
+test
+tests
+e2e-test
+*.test.ts
+*.test.js
+*.spec.ts
+*.spec.js
+
+# Development files
+.eslintrc.json
+.eslintignore
+.editorconfig
+tsconfig.*.json
+
+# Scripts
+*.sh
+batch-*.sh
+convert-*.sh

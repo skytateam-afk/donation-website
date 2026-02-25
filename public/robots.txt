@@ -1,0 +1,53 @@
+# robots.txt for ReferralAI
+
+User-agent: *
+Allow: /
+Allow: /pricing
+Allow: /about
+Allow: /docs
+Allow: /demo
+Allow: /terms
+Allow: /privacy
+Allow: /security
+Allow: /data-policy
+Allow: /careers
+Allow: /changelog
+Allow: /roadmap
+Allow: /feedback
+
+# Disallow admin and user areas
+Disallow: /admin/
+Disallow: /dashboard
+Disallow: /profile
+Disallow: /billing
+Disallow: /payout-settings
+Disallow: /referrer/
+Disallow: /codes
+Disallow: /links
+Disallow: /organizations
+Disallow: /forms
+Disallow: /payments
+
+# Disallow authentication pages
+Disallow: /login
+Disallow: /signup
+Disallow: /forgot-password
+Disallow: /reset-password
+Disallow: /verify-email
+Disallow: /invite/
+
+# Sitemap
+Sitemap: https://referralai.com/sitemap.xml
+
+# Crawl-delay for all bots
+Crawl-delay: 1
+
+# Special rules for common bots
+User-agent: Googlebot
+Crawl-delay: 0.5
+
+User-agent: Bingbot
+Crawl-delay: 1
+
+User-agent: Slurp
+Crawl-delay: 1
